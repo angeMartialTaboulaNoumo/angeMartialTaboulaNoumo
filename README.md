@@ -37,24 +37,3 @@
 | 🚢 Déploiement | Docker, Kubernetes, CI/CD (GitHub Actions, Jenkins) |
 | ☁️ Cloud | GCP, AWS (et un peu de Terraform) |
 | 📊 Visualisation | Matplotlib, Seaborn, Plotly, Streamlit |
-
----
-
-## 🧩 Projets phares
-
-```python
-from flask import Flask, jsonify
-import pandas as pd, numpy as np, tensorflow as tf
-
-app = Flask(__name__)
-
-@app.route("/predict", methods=["GET"])
-def predict():
-    # Mini démo d’un endpoint IA 😎
-    x = np.random.rand(3, 10)
-    model = tf.keras.Sequential([tf.keras.layers.Dense(1)])
-    y_pred = model(x)
-    return jsonify({"prediction": y_pred.numpy().tolist()})
-
-if __name__ == "__main__":
-    app.run(debug=True)
